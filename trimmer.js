@@ -15,9 +15,11 @@ async function get_data() {
 
 async function add_redir() {
 	let long_url = document.querySelector("#long_url"),
-		short_code = document.querySelector("#short_code");
+		short_code = document.querySelector("#short_code"),
+		get_suff = document.querySelector("#get_stuff");
 	long_url.disabled = true;
 	short_code.disabled = true;
+    get_suff.disabled = true;
 	document.querySelector("#new_url").innerHTML = "Please wait while your request is processed.";
 
 	await get_data();
@@ -36,6 +38,7 @@ async function add_redir() {
 	setTimeout(() => {
 		short_code.disabled = false;
 		long_url.disabled = false;
+        get_suff.disabled = false;
 
 		document.querySelector("#new_url").innerHTML = `New short URL created: <br />
     <a href="https://make-short-url.netlify.app/${short_code.value}" target="_blank"
