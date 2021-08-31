@@ -4,3 +4,4 @@
 /bs https://requester.mturk.com/create/projects 301
 /bs https://requester.mturk.com/create/projects 301
 /aaa https://github.com/tafakkur/short-url-netlify/blob/main/_redirects 301
+/aaa https://app.netlify.com/sites/make-short-url/deploys 301
