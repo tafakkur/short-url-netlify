@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netlify URL Shortner</title>
-</head>
-<body>
-    <h1>A simple URL Shortner using <code>Netlify _redirects</code></h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Netlify URL Shortner</title>
+		<script src="trimmer.js" type="text/javascript"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	</head>
+	<body>
+		<h1>
+			A simple URL Shortner using
+			<a href="https://docs.netlify.com/routing/redirects/redirect-options/" target="_blank">
+				Netlify Redirects
+			</a>
+		</h1>
 
+		<p>
+			This is a short demo to demonstrate building a URL shortner using a Netlify site hosted on
+			GitHub and AWS Lambda.
+		</p>
 
-
-</body>
+		<div>
+			<table>
+				<tr>
+					<th>Destination URL</th>
+					<td>
+						<input type="url" placeholder="Enter full URL" id="long_url" />
+						<span style="font-size: smaller; font-style: italic; text-align: center">
+							Example: https://make-short-url.netlify.app/index.html
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th>Short Code</th>
+					<td>
+						<input type="text" placeholder="Short Code" maxlength="10" id="short_code" />
+						<span style="font-size: smaller; font-style: italic; text-align: center">
+							Your new URL will be "https://make-short-url.netlify.app/short-code"
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button onclick="add_redir()">Create Short URL</button></td>
+				</tr>
+			</table>
+			<div id="new_url" style="color: tomato; font-size: larger"></div>
+		</div>
+	</body>
 </html>
